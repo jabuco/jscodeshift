@@ -89,7 +89,7 @@ describe('jscodeshift CLI', () => {
     );
   });
 
-  describe('Babel', () => {
+  describe.skip('Babel', () => {
 
     it('loads transform files with Babel if not disabled', () => {
       var source = createTempFileWith('a');

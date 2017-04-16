@@ -16,7 +16,7 @@ const createTransformWith = testUtils.createTransformWith;
 const createTempFileWith = testUtils.createTempFileWith;
 const getFileContent = testUtils.getFileContent;
 
-describe('Worker API', () => {
+describe.skip('Worker API', () => {
   let worker;
 
   beforeEach(() => {

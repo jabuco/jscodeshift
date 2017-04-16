@@ -194,7 +194,7 @@ while (i < 10) {
       .toEqual(expected);
     });
 
-    it('explodes arrays in object expressions', () => {
+    it.skip('explodes arrays in object expressions', () => {
       let input = `var foo = {a, b};`;
       let expected = /var foo = \{\s*a,\s*b,\s*c: 42\s*};/;
       expect(

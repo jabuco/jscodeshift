@@ -12,9 +12,9 @@
 
 module.exports = function getParser(parserName) {
   switch (parserName) {
-    case 'flow':
-      return require('../parser/flow');
-    default:
+    case 'babylon':
       return require('../parser/babylon');
+    default:
+      return require('../parser/flow');
   }
 };

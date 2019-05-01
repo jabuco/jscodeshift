@@ -65,7 +65,7 @@ function runTest(dirName, transformName, options, testFilePrefix) {
     },
     options || {}
   );
-  expect((output || '').trim()).toEqual(expectedOutput.trim());
+  expect((output || '').trim().replace(/\s/g, '')).toEqual(expectedOutput.trim().replace(/\s/g, ''));
 }
 exports.runTest = runTest;
 

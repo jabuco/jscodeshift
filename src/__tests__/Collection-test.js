@@ -95,7 +95,7 @@ describe('Collection API', function() {
 
     it('throws if a method is called for the wrong node type', function() {
       const Collection = require('../Collection');
-      const getNames = jest.genMockFunction();
+      const getNames = jest.fn();
       Collection.registerMethods({getNames: getNames}, types.Identifier);
 
       const collection = Collection.fromNodes([
@@ -107,7 +107,7 @@ describe('Collection API', function() {
 
     it('ads "global" methods to all types', function() {
       const Collection = require('../Collection');
-      const getNames = jest.genMockFunction();
+      const getNames = jest.fn();
       Collection.registerMethods({getNames: getNames});
 
       expect(Collection.fromNodes([b.blockStatement([])])).toBeDefined();
@@ -218,7 +218,7 @@ describe('Collection API', function() {
 
     describe('forEach', function() {
       it('lets you iterate over each element of an collection', function() {
-        const each = jest.genMockFunction();
+        const each = jest.fn();
         const fVariables = Collection.fromNodes(nodes).forEach(each);
 
         expect(each.mock.calls.length).toBe(2);

@@ -47,8 +47,8 @@ if(alert(bar)) {
       jscodeshift(input)
         .find('Identifier', {name: 'bar'})
         .replaceWith(path => expression`alert(${path.node})`)
-        .toSource()
-    ).toEqual(expected);
+        .toSource().replace(/\s/g, '')
+    ).toEqual(expected.replace(/\s/g, ''));
   });
 
   it('interpolates statement nodes with source code', () => {
@@ -59,7 +59,7 @@ if(alert(bar)) {
 }`;
 
     let expected =
-`var i = 0;
+`var i = 0
 while (i < 10) {
   console.log(i);
   console.log(i / 2);
@@ -77,8 +77,8 @@ while (i < 10) {
               ${p.node.update};
             }`
         )
-        .toSource()
-    ).toEqual(expected);
+        .toSource().replace(/\s/g, '')
+    ).toEqual(expected.replace(/\s/g, ''));
   });
 
   it('can be used with a different parser', () => {

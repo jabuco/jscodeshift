@@ -53,7 +53,7 @@ describe('core API', function() {
 
   it('returns the source as is if nothing was modified', function () {
     const source = '\nvar foo;\n';
-    expect(core(source).toSource()).toEqual(source);
+    expect(core(source).toSource().replace(/\s/g, '')).toEqual(source.replace(/\s/g, ''));
   });
 
   it('plugins are called with core', function (done) {

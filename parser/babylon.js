@@ -10,7 +10,7 @@
 
 'use strict';
 
-const babylon = require('babylon');
+const babylon = require('@babel/parse');
 
 const options = {
   sourceType: 'module',

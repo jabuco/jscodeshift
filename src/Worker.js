@@ -53,14 +53,13 @@ function prepareJscodeshift(options) {
 
 function setup(tr, babel) {
   if (babel === 'babel') {
-    require('babel-register')({
+    require('@babel/register')({
       babelrc: false,
       presets: [
-        require('babel-preset-es2015'),
-        require('babel-preset-stage-1'),
+        require('@babel/preset-env'),
       ],
       plugins: [
-        require('babel-plugin-transform-flow-strip-types'),
+        require('@babel/plugin-transform-flow-strip-types'),
       ]
     });
   }

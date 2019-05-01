@@ -10,7 +10,7 @@
 
 'use strict';
 
-// const babel = require('babel-core');
+const babel = require('@babel/core');
 
 describe.skip('JSXCollection API', function() {
   let nodes;

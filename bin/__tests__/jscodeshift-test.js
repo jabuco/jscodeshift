@@ -29,8 +29,8 @@ var createTempFileWith = testUtils.createTempFileWith;
 function run(args, stdin, cwd) {
   return new Promise(resolve => {
     var jscodeshift = child_process.spawn(
-      path.join(__dirname, '../jscodeshift.sh'),
-      args,
+      'node',
+      [path.join(__dirname, '../jscodeshift'), ...args],
       {
         cwd,
       }
